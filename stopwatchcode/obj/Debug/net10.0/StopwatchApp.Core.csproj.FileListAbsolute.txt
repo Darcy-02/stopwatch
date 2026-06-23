@@ -1,0 +1,15 @@
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\bin\Debug\net10.0\StopwatchApp.Core.exe
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\bin\Debug\net10.0\StopwatchApp.Core.deps.json
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\bin\Debug\net10.0\StopwatchApp.Core.runtimeconfig.json
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\bin\Debug\net10.0\StopwatchApp.Core.dll
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\bin\Debug\net10.0\StopwatchApp.Core.pdb
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.AssemblyInfoInputs.cache
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.AssemblyInfo.cs
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.sourcelink.json
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.dll
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\refint\StopwatchApp.Core.dll
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.pdb
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\StopwatchApp.Core.genruntimeconfig.cache
+C:\Users\Darcy\Documents\stopwatch\stopwatchcode\obj\Debug\net10.0\ref\StopwatchApp.Core.dll
