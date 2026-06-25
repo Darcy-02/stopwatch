@@ -30,10 +30,10 @@ actions are available (for example, Resume is only clickable while paused).
 ## Requirements
 
 - Windows 10 or 11
-- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [.NET 7 SDK](https://dotnet.microsoft.com/download)
 
 > If you have an older SDK, open `StopwatchApp.Core.csproj` and change
-> `net10.0-windows` to the version you have (e.g. `net8.0-windows`). The code
+> `net7.0-windows` to the version you have (e.g. `net6.0-windows`). The code
 > does not change.
 
 ## How to run
