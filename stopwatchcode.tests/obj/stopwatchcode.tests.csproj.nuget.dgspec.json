@@ -1,0 +1,154 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode.tests\\stopwatchcode.tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode.tests\\stopwatchcode.tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode.tests\\stopwatchcode.tests.csproj",
+        "projectName": "stopwatchcode.tests",
+        "projectPath": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode.tests\\stopwatchcode.tests.csproj",
+        "packagesPath": "C:\\Users\\GK TECH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode.tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\GK TECH\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows": {
+            "framework": "net7.0-windows7.0",
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {
+              "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode\\StopwatchApp.Core.csproj": {
+                "projectPath": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode\\StopwatchApp.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net7.0-windows": {
+          "framework": "net7.0-windows7.0",
+          "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode\\StopwatchApp.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode\\StopwatchApp.Core.csproj",
+        "projectName": "StopwatchApp.Core",
+        "projectPath": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode\\StopwatchApp.Core.csproj",
+        "packagesPath": "C:\\Users\\GK TECH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GK TECH\\stopwatch\\stopwatchcode\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\GK TECH\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows": {
+            "framework": "net7.0-windows7.0",
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net7.0-windows": {
+          "framework": "net7.0-windows7.0",
+          "targetAlias": "net7.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

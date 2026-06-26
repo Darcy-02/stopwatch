@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/stopwatchcode/">
+    <Project Path="stopwatchcode/StopwatchApp.Core.csproj" />
+  </Folder>
+  <Project Path="stopwatchcode.tests/stopwatchcode.tests.csproj" />
+</Solution>

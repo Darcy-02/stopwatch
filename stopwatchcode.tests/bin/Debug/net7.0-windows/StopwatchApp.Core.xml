@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StopwatchApp.Core</name>
+    </assembly>
+    <members>
+        <member name="T:StopwatchApp.Core.Program">
+            <summary>
+            Application entry point. Configures Windows Forms and launches the
+            main stopwatch window.
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.Program.Main">
+            <summary>
+            The method where the program starts running.
+            </summary>
+        </member>
+        <member name="T:StopwatchApp.Core.StopwatchState">
+            <summary>
+            The possible states the stopwatch can be in at any moment.
+            </summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchState.Idle">
+            <summary>The stopwatch has not been started, or has been reset.</summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchState.Running">
+            <summary>The stopwatch is currently counting up.</summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchState.Paused">
+            <summary>The stopwatch is temporarily paused.</summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchState.Stopped">
+            <summary>The stopwatch has been stopped.</summary>
+        </member>
+        <member name="T:StopwatchApp.Core.StopwatchEngine">
+            <summary>
+            Handles all stopwatch timing and state logic. It counts elapsed seconds
+            using a one-second timer and raises events so a user interface can
+            update without containing any timing logic itself.
+            </summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchEngine._timer">
+            <summary>The timer that fires once every second.</summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchEngine._totalSeconds">
+            <summary>The total number of seconds counted so far.</summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchEngine._state">
+            <summary>The current state of the stopwatch.</summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchEngine._disposed">
+            <summary>Tracks whether this object has already been disposed.</summary>
+        </member>
+        <member name="E:StopwatchApp.Core.StopwatchEngine.TimerTick">
+            <summary>
+            Raised every second with the current time as a formatted string,
+            so the UI can refresh its display.
+            </summary>
+        </member>
+        <member name="E:StopwatchApp.Core.StopwatchEngine.StateChanged">
+            <summary>
+            Raised whenever the stopwatch changes state, so the UI can react
+            (for example, by enabling or disabling buttons).
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.#ctor">
+            <summary>
+            Creates a new stopwatch engine in the Idle state with the timer set
+            to tick once per second.
+            </summary>
+        </member>
+        <member name="P:StopwatchApp.Core.StopwatchEngine.State">
+            <summary>Gets the current state of the stopwatch.</summary>
+        </member>
+        <member name="P:StopwatchApp.Core.StopwatchEngine.TotalSeconds">
+            <summary>Gets the total elapsed seconds counted so far.</summary>
+        </member>
+        <member name="P:StopwatchApp.Core.StopwatchEngine.FormattedTime">
+            <summary>Gets the elapsed time formatted as <c>hh:mm:ss</c>.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Start">
+            <summary>
+            Starts the stopwatch from <c>00:00:00</c>.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the stopwatch is already running or is paused.
+            </exception>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Pause">
+            <summary>
+            Pauses the stopwatch and returns the current time.
+            </summary>
+            <returns>The current elapsed time formatted as <c>hh:mm:ss</c>.</returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the stopwatch is not currently running.
+            </exception>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Resume">
+            <summary>
+            Resumes the stopwatch from the time at which it was paused.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the stopwatch is not currently paused.
+            </exception>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Reset">
+            <summary>
+            Resets the stopwatch back to <c>00:00:00</c> and returns it to the
+            Idle state. Notifies subscribers so the display shows zero.
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Stop">
+            <summary>
+            Stops the stopwatch completely and returns the last recorded time.
+            </summary>
+            <returns>The final elapsed time formatted as <c>hh:mm:ss</c>.</returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the stopwatch is neither running nor paused.
+            </exception>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.OnTimerElapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Runs once per second while the timer is active. Increments the
+            elapsed seconds and notifies subscribers of the new time.
+            </summary>
+            <param name="sender">The timer that raised the event.</param>
+            <param name="e">The elapsed-event data.</param>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.SetState(StopwatchApp.Core.StopwatchState)">
+            <summary>
+            Updates the current state and notifies subscribers of the change.
+            </summary>
+            <param name="newState">The new state to switch to.</param>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.FormatTime(System.Int32)">
+            <summary>
+            Converts a number of seconds into an <c>hh:mm:ss</c> string.
+            </summary>
+            <param name="totalSeconds">The total seconds to format.</param>
+            <returns>The time formatted as <c>hh:mm:ss</c> with zero-padding.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown if <paramref name="totalSeconds"/> is negative.
+            </exception>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Dispose">
+            <summary>
+            Releases the resources used by the stopwatch (the underlying timer).
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchEngine.Dispose(System.Boolean)">
+            <summary>
+            Releases resources used by the stopwatch.
+            </summary>
+            <param name="disposing">
+            <c>true</c> when called directly; stops and disposes the timer.
+            </param>
+        </member>
+        <member name="T:StopwatchApp.Core.StopwatchForm">
+            <summary>
+            The graphical window for the stopwatch. It displays the elapsed time and
+            provides Start, Pause, Resume, Reset, and Stop buttons. All timing logic
+            lives in <see cref="T:StopwatchApp.Core.StopwatchEngine"/>; this form only shows the time and
+            forwards button clicks to the engine.
+            </summary>
+        </member>
+        <member name="F:StopwatchApp.Core.StopwatchForm._engine">
+            <summary>The engine that does the actual timing and state handling.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.#ctor">
+            <summary>
+            Builds the window, lays out the controls, and subscribes to the
+            engine's events.
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.ConfigureButton(System.Windows.Forms.Button,System.String,System.Int32,System.EventHandler)">
+            <summary>Sets up a button's text, position, and click handler.</summary>
+            <param name="button">The button to configure.</param>
+            <param name="text">The label shown on the button.</param>
+            <param name="left">The horizontal position in pixels.</param>
+            <param name="onClick">The method to run when the button is clicked.</param>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.StartClick(System.Object,System.EventArgs)">
+            <summary>Starts the stopwatch from 00:00:00.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.PauseClick(System.Object,System.EventArgs)">
+            <summary>Pauses the stopwatch and shows the current time.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.ResumeClick(System.Object,System.EventArgs)">
+            <summary>Resumes the stopwatch from the paused time.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.ResetClick(System.Object,System.EventArgs)">
+            <summary>Resets the stopwatch back to 00:00:00.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.StopClick(System.Object,System.EventArgs)">
+            <summary>Stops the stopwatch and shows the last recorded time.</summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.Run(System.Action)">
+            <summary>
+            Runs an engine action, turning any invalid-state error into a status
+            message instead of letting the program crash.
+            </summary>
+            <param name="action">The engine operation to attempt.</param>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.OnTimerTick(System.Object,System.String)">
+            <summary>
+            Updates the time label every second. Marshals back onto the UI thread
+            because the engine's timer fires on a background thread.
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.OnStateChanged(System.Object,StopwatchApp.Core.StopwatchState)">
+            <summary>
+            Enables or disables buttons whenever the engine's state changes, so
+            only valid actions are clickable.
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.StopwatchForm.UpdateButtons(StopwatchApp.Core.StopwatchState)">
+            <summary>
+            Turns each button on or off to match the current stopwatch state.
+            </summary>
+            <param name="state">The engine's current state.</param>
+        </member>
+        <member name="T:StopwatchApp.Core.ApplicationConfiguration">
+            <summary>
+             Bootstrap the application configuration.
+            </summary>
+        </member>
+        <member name="M:StopwatchApp.Core.ApplicationConfiguration.Initialize">
+            <summary>
+             Bootstrap the application as follows:
+             <code>
+             global::System.Windows.Forms.Application.EnableVisualStyles();
+             global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+             global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            </code>
+            </summary>
+        </member>
+    </members>
+</doc>
